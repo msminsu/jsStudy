@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="ko">
+    <meta charset="UTF-8">
+    <title>window popup</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+
+<h1 class="guide-tit">window popup</h1>
+<div class="guide-box">
+
+    <a href="http://naver.com"
+       target="_blank"
+       title="새 창 열림"
+       class="btn"
+       data-ui-window-open="toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400"
+       data-ui-window-name="naver">naver.com</a>
+
+    <a href="http://daum.net"
+       target="_blank"
+       title="새 창 열림"
+       class="btn"
+       data-ui-window-open="width=1000,height=1000"
+       data-ui-window-name="">daum.net</a>
+</div>
+
+<script src="../@common/js/jquery-1.11.2.min.js"></script>
+<script src="../@modules/common.js"></script>
+<script src="window-popup.js"></script>
+<script>
+   // $(document).on('click.minsu.windowPopup', '[data-ui-window-open]', minsu.windowPopup.open);
+</script>
+</body>
+</html>
