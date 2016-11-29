@@ -1,6 +1,4 @@
-/**
- * Created by msminsu on 2016-11-29.
- */
+
 (function($){
     $('.spin-box').each(function(){
        var obj = $(this),
@@ -17,7 +15,7 @@
         })
     });
 })(window.jQuery);
-/*
-(function(){
+
+/*(function(){
 
 }());*/
