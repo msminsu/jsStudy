@@ -1,0 +1,145 @@
+@mixin clear{
+	display:block;
+	clear:both;
+	content:"";
+}
+
+@mixin box-sizing($type:border-box) {
+	-webkit-box-sizing:$type;
+	-moz-box-sizing:$type;
+	box-sizing:$type;
+}
+
+@mixin button($size:12px, $height:30px) {
+	font-size:$size;
+	display:block;
+	text-align:center;
+	padding:(($height - $size)/2) 0;
+	line-height:1;
+}
+
+@mixin bg($img, $size:auto, $x:left, $y:center) {
+	background:url($img) $x $y no-repeat;
+	background-size:$size;
+}
+
+@mixin setLinkColor($color:#000, $link:none, $visit:none, $hover:none) {
+	&{
+		text-decoration:$link;
+		color:$color;
+	}
+	&:visited{
+		text-decoration:$visit;
+		color:$color;
+	}
+	&:hover{
+		text-decoration:$hover;
+		color:$color;
+	}
+}
+
+@mixin setFont($size:12px, $fontName:sans-serif, $bold:1) {
+	font-size:$size;
+	font-family:$fontName, sans-serif;
+}
+
+@mixin bold($bold:3) {
+	@if ($bold == 1){
+		font-weight:100;
+	}
+	@if ($bold == 2){
+		font-weight:300;
+	}
+	@if ($bold == 3){
+		font-weight:400;
+	}
+	@if ($bold == 4){
+		font-weight:500;
+	}
+	@if ($bold == 5){
+		font-weight:700;
+	}
+	@if ($bold == 6){
+		font-weight:900;
+	}
+}
+
+@mixin twoColumn($left:100px, $listMargin:5px) {
+	li{
+		width:100%;
+		display:table;
+		table-layout:fixed;
+		margin-top:$listMargin;
+		&:first-child{
+			margin-top:0;
+		}
+	}
+	span{
+		display:table-cell;
+		vertical-align:top;
+		&:first-child{
+			width:$left;
+		}
+		&:last-child{
+			padding-left:5px;
+		}
+	}
+}
+
+@mixin hList($num:1, $size:12px, $height:30px, $line:null, $bg:#fff) {
+	ul{
+		width:100%;
+
+		li{
+			@include box-sizing(border-box);
+			float:left;
+			width:100%/$num;
+			text-align:center;
+			background:$bg;
+
+			&:first-child{
+				.btn{
+					background:none;
+				}
+			}
+
+			.btn{
+				@if ($line != null){
+					@include bg($line, 1px);
+				}
+				@include button(12px, 30px);
+			}
+		}
+
+		&:after{
+			@include clear;
+		}
+	}
+}
+
+@mixin orderList($left:10px,$mt:2px) {
+	li{
+		position:relative;
+		padding-left:$left;
+		margin-top:3px;
+		.num{
+			position:absolute;
+			left:0;
+			top:0;
+		}
+	}
+}
+
+@mixin boxStyleA($box-padding:10px,$tit-padding:10px, $con-margin:10px) {
+	border:1px solid #eee;
+	padding:$box-padding;
+
+	.tit{
+		padding-bottom:$tit-padding;
+		border-bottom:1px solid #ccc;
+	}
+
+	.con{
+		margin-top:$con-margin;
+	}
+}
