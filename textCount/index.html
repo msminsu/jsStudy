@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+
+<body>
+<div class="opinion">
+    <textarea name="opinion" placeholder="1,000자 내로 입력해 주세요." maxlength="1000" cols="50" rows="10"></textarea>
+    <div class="count">(<span id="textCount">0</span>/1000)</div>
+</div>
+
+<div class="survey-12">
+    <textarea name="opinion" placeholder="1,000자 내로 입력해 주세요." maxlength="1000" cols="50" rows="10"></textarea>
+    <div class="count">(<span id="textCount">0</span>/1000)</div>
+</div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+<!--<script src="../@common/js/jquery-1.11.2.min.js"></script>-->
+<script>
+
+    //텍스트 카운트
+    (function($){
+        $.fn.extend( {
+            limiter: function(limit, elem) {
+
+                $(this).on("keyup focus", function() {
+                    setCount(this, elem);
+                });
+                function setCount(src, elem) {
+                    var chars = src.value.length;
+                    if (chars > limit) {
+                        src.value = src.value.substr(0, limit);
+                        chars = limit;
+                    }
+                    elem.html( 1000-(limit - chars) );
+                }
+                setCount($(this)[0], elem);
+            }
+        });
+
+        var elem = $(".opinion .count span");
+        $(".opinion textarea").limiter(1000, elem);
+
+        console.log($('.survey-12'));
+        if($('.survey-12').length != 0){
+            var elem2 = $(".survey-12 .count span");
+            $(".survey-12 textarea").limiter(1000, elem2);
+        }
+
+    })(jQuery);
+
+
+</script>
+</body>
+
+</html>
