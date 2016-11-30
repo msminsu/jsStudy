@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="ko">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{ margin: 0; padding: 0;}
+        .btn.close{ position: absolute; right: 15px; top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+<h1 class="guide-tit">포커스 가두기</h1>
+<div class="guide-box">
+
+    <div class="layer">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, inventore.</p>
+        <p>Lorem ipsum dolor sit amet, Dicta, inventore.</p>
+        <p>Lorem ipsumpisicing elit. Dicta, inventore.</p>
+        <p>Lorem ipsum dolor sit amet, consect elit. Dicta, inventore.</p>
+
+        <div class="btn-wrap">
+            <a href="#" class="btn" data-ui-focus-id="focus-01" data-ui-focus-prev="btn-close">링크1</a>
+            <a href="#" class="btn">링크2</a>
+            <a href="#" class="btn">링크3</a>
+            <a href="#" class="btn" >링크4</a>
+        </div>
+        <a href="#" class="btn close" data-ui-focus-id="btn-close" data-ui-focus-next="focus-01"><span class="sr-only">닫기</span> <span class="fa fa-close"></span></a>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="../@common/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="../@modules/common.js"></script>
+<script type="text/javascript" src="../@modules/accessibilityFocus.js"></script>
+</body>
+</html>

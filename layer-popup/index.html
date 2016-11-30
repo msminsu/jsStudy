@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>layer popup</title>
+    <link rel="stylesheet" href="../@common/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+<h1 class="guide-tit">레이어 팝업</h1>
+
+<div class="guide-box">
+    <a href="#layer-01"  class="btn" title="레이어 열림" data-ui-layer-open="false" data-ui-target="#layer-01">레이어1 열기</a>
+    <a href="#layer-02"  class="btn" title="레이어 열림" data-ui-layer-open="false">레이어2 열기</a>
+</div>
+
+<div id="layer-section">
+    <div id="layer-01" class="layer" tabindex="0" data-ui-focus-id="layer-01" data-ui-focus-prev="btn-close-01">
+        <p>레이어 1번 <a href="#">sect elit. Dicta, inventore</a> inventore.</p>
+        <a href="#" class="btn close btn-layer-close " data-ui-focus-id="btn-close-01" data-ui-focus-next="layer-01"><span class="sr-only">닫기</span> <span class="fa fa-close"></span></a>
+    </div>
+
+    <div id="layer-02" class="layer" tabindex="0" data-ui-focus-id="layer-02" data-ui-focus-prev="btn-close-02">
+        <p>레이어 2번 <a href="#">sect elit. Dicta, inventore</a> inventore.</p>
+        <a href="#layer-03" title="레이어 열림" data-ui-layer-open="false">레이어3 열기</a>
+        <a href="#" class="btn close btn-layer-close" data-ui-focus-id="btn-close-02" data-ui-focus-next="layer-02"><span class="sr-only">닫기</span> <span class="fa fa-close"></span></a>
+    </div>
+
+    <div id="layer-03" class="layer" tabindex="0" data-ui-focus-id="layer-03" data-ui-focus-prev="btn-close-03">
+        <p>레이어 3번 <a href="#">sect elit. Dicta, inventore</a> inventore.</p>
+        <p>레이어 3번 <a href="#">sect elit. Dicta, inventore</a> inventore.</p>
+        <a href="#" class="btn close btn-layer-close" data-ui-focus-id="btn-close-03" data-ui-focus-next="layer-03"><span class="sr-only">닫기</span> <span class="fa fa-close"></span></a>
+    </div>
+</div>
+
+
+<script src="../@common/js/jquery-1.11.2.min.js"></script>
+<script src="../@modules/common.js"></script>
+<script src="../@modules/accessibilityFocus.js"></script>
+<script src="../@modules/layer-popup.js"></script>
+<script>
+    function init(){
+        $.ajax({
+            url: "sample.html"
+        }).done(function (html){
+            minsu.layerPopup.open(html);
+        });
+    }
+
+    $(document).ready(function (){
+        init();
+    });
+</script>
+</body>
+</html>

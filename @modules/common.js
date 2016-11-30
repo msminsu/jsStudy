@@ -1,6 +1,6 @@
-var demoon = {};
+var minsu = {};
 
-demoon.helper = (function ($){
+minsu.helper = (function ($){
     function getBtnTarget(t){
         return $(t).attr('data-target') ? $(t).attr('data-target') : t.hash;
     }
