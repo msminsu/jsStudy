@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        *{ margin: 0; padding: 0;}
+        ul{position: relative;top: 100px; right: 50%;float: right;
+            overflow:hidden; padding-left: 25px;color:#d2d4d7; border:1px solid #d2d4d7;
+            border-radius: 20px;
+            width: 40px; height: 24px;
+        }
+        li{float:left; margin-right: 15px; list-style: none}
+        ul:hover{width:140px;}
+        ul.fa-globe:before{position: absolute; left: 4px ;top:4px;}
+        a{text-decoration: none;color:#666;line-height: 24px;font-weight: bold;}
+        a:hover{color: #f27824}
+        ul {
+            -webkit-transition: all 0.3s ease-out;
+            -moz-transition: all 0.3s ease-out;
+            -o-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+        }
+
+        .business_center{width: 170px; height: 75px; display: block; background: #3d3d3d; position: relative; z-index: 2;}
+        .ico{position: absolute; left: 15px; top: 18px; }
+        .text{ font-size: 16px; color: #fff; position: relative; display: block; left: 72px; top: 22px; letter-spacing: 1px;
+            font-weight: normal;
+            line-height: 1.4;}
+    </style>
+</head>
+<body>
+
+<ul class="fa fa-globe">
+    <li><a href="#none">KOR</a></li>
+    <li><a href="#none">JAP</a></li>
+    <li><a href="#none">ENG</a></li>
+</ul>
+<a href="javascript:void(0);" class="business_center">
+                <span class="ico">
+                    <img src="./ico/navi_00.png" alt="">
+                </span>
+    <span class="text en_font1">BUSINESS <br> CENTER</span>
+</a>
+<hr>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+<script>
+    (function($){
+        var $businessCenter = $('.business_center');
+        var resourcePath = '.';
+
+        $businessCenter.hover(
+                function(){
+                    var businnesIcoIdx = 0;
+
+                    businessTimer = setInterval(function(){
+                        businnesIcoIdx += 1;
+
+                        if(businnesIcoIdx < 10){
+                            $businessCenter.find('.ico').find('img').attr('src',resourcePath+'/ico/navi_0'+businnesIcoIdx+'.png');
+                        }else{
+                            $businessCenter.find('.ico').find('img').attr('src',resourcePath+'/ico/navi_'+businnesIcoIdx+'.png');
+                        }
+
+                        if(businnesIcoIdx > 28){
+                            clearInterval(businessTimer);
+                        }
+                    }, 1000 / 40);
+                },
+                function(){
+                    $businessCenter.find('.ico').find('img').attr('src',resourcePath+'/ico/navi_00.png');
+                    clearInterval(businessTimer);
+                }
+        );
+    })(window.jQuery);
+</script>
+</body>
+</html>
