@@ -28,6 +28,12 @@
         .text{ font-size: 16px; color: #fff; position: relative; display: block; left: 72px; top: 22px; letter-spacing: 1px;
             font-weight: normal;
             line-height: 1.4;}
+        .ico_box{
+            display: block;
+            width: 150px;
+            height: 89px;
+            background:url("./ico/icon_ani0001.png") center center no-repeat;
+        }
     </style>
 </head>
 <body>
@@ -37,6 +43,7 @@
     <li><a href="#none">JAP</a></li>
     <li><a href="#none">ENG</a></li>
 </ul>
+<a href="javascript:void(0);" class="ico_box" data-seqidx="2"></a>
 <a href="javascript:void(0);" class="business_center">
                 <span class="ico">
                     <img src="./ico/navi_00.png" alt="">
@@ -49,7 +56,12 @@
 <script>
     (function($){
         var $businessCenter = $('.business_center');
+        var $ico = $('.ico_box');
+        var icoTimer;
+        var businessTimer;
+        var naviSeqIdx = 0;
         var resourcePath = '.';
+        var naviSeqIdx = 0;
 
         $businessCenter.hover(
                 function(){
@@ -74,6 +86,36 @@
                     clearInterval(businessTimer);
                 }
         );
+
+        var idx = $('.ico_box').attr('data-seqIdx'), max=17;
+        if(idx=="1" || idx=="7") max=15;
+
+        $ico.mouseenter(function(){
+            naviSeqIdx=0;
+            icoTimer = setInterval(function(){
+                if(naviSeqIdx >= max){
+                    //naviSeqIdx = 1;
+                    clearInterval(icoTimer);
+                }else{
+                    naviSeqIdx += 1;
+                }
+
+                if(naviSeqIdx > 9){
+                    //$('.ico_box').eq(num).attr('src',resourcePath+'/global_images/ico/gnb_ani/0'+idx+'/icon_ani00'+naviSeqIdx+'.png');
+                    $ico.css('background','url("'+resourcePath+'/ico/icon_ani00'+naviSeqIdx+'.png") no-repeat center center');
+                }else{
+                    //$('.ico_box').eq(num).attr('src',resourcePath+'/global_images/ico/gnb_ani/0'+idx+'/icon_ani000'+naviSeqIdx+'.png');
+                    $ico.css('background','url("'+resourcePath+'/ico/icon_ani000'+naviSeqIdx+'.png") no-repeat center center');
+                }
+
+            },1000 / 30);
+        });
+        $ico.mouseleave(function(){
+
+            $('.ico_box').css('background','url("'+resourcePath+'/ico/icon_ani0001.png") no-repeat center center');
+            clearInterval(icoTimer);
+        });
+
     })(window.jQuery);
 </script>
 </body>

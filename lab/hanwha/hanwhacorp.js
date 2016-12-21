@@ -1,3 +1,5 @@
+// http://www.hanwhacorp.co.kr/machinery/customer/notice.do
+
 var navi = (function(){
     var naviIdx;
     var $navigation = $('#navigation');
@@ -676,3 +678,23 @@ navi.init();
  *//**
  * Created by msminsu on 2016-12-15.
  */
+
+
+$('.slide-1').each(function(){
+    new ui.Slide({
+        selector: $(this),
+        move: 1,
+        callback: function(){
+            console.log('callback');
+        }
+    });
+});
+var slide3 = new ui.Slide({
+    selector: $('.slide-3'),
+    move: 1
+});
+
+var slide4 = new ui.Slide({
+    selector: $('.slide-4'),
+    move: 1
+});

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .opinion { position: relative;width: 890px; height: 400px;padding: 36px 40px 0; font-size: 14px; text-indent: 0; }
+        .opinion .count { top: 300px; right: 40px; }
+        .opinion input { width: 846px; height: 43px; padding: 0 22px; line-height: 43px; border: none; background: #364d65; color: #a0cfff; margin-bottom: 10px; }
+        .opinion input::-webkit-input-placeholder { color: #6b849d; }
+        .opinion textarea { font-size: 14px; height: 180px; width: 846px; padding: 10px 22px 15px; border: none; background: #364d65; color: #a0cfff; }
+        .opinion textarea::-webkit-input-placeholder { color: #6b849d; }
+
+        .radio-area table { width: 950px; text-align: center; border: 1px solid #2f445a; word-break: keep-all; }
+        .radio-area table thead { background: #abaeb1; }
+        .radio-area table thead th { padding: 15px 0; font-size: 12px; color: #487096; border-right: 1px solid #364759; }
+        .radio-area table thead th img { margin-bottom: 5px; display: block;}
+        .radio-area table tbody { background: #6a7682; }
+        .radio-area table tbody th { font-size: 13px; color: #90908f; border-bottom: 1px solid #2b3a4a; border-right: 1px solid #364759; padding: 9px 0 14px; }
+        .radio-area table tbody td { border-bottom: 1px solid #2b3a4a; border-right: 1px solid #364759; }
+        .radio-area label {     display: inline-block;/*width: 18px; design*/ padding: 0; text-indent: -999em; }
+
+        .check-area table { width: 950px; text-align: center; border: 1px solid #2f445a; word-break: keep-all; }
+        .check-area table thead { background: #abaeb1; }
+        .check-area table thead th { padding: 15px 0 22px; font-size: 12px; color: #487096; border-right: 1px solid #364759; border-bottom: 1px solid #2b3a4a; }
+        .check-area table tbody { background: #6a7682; }
+        .check-area table tbody th { font-size: 13px; border-bottom: 1px solid #2b3a4a; border-right: 1px solid #364759; padding: 23px 0 24px 23px; color: #b2bcc5; font-weight: normal; text-align: left; letter-spacing: -1px; line-height: 1.6; }
+        .check-area table tbody th em { font-style: normal; padding-left: 11px; }
+        .check-area table tbody td { padding: 12px 14px; border-bottom: 1px solid #2b3a4a; border-right: 1px solid #364759; }
+        .check-area table tbody td input[type=checkbox] + label { /*padding-left:15px; */ }
+        .check-area table tbody td input[type=text] { width: 108px; padding-left: 10px; color: #a0cfff; }
+        .check-area table tbody td #answer10-1-08 { display: none; }
+        .check-area table tbody td #answer-10-2-08 { display: none; }
+
+
+        .quick-menu { /*background: url("http://rc.static.plaync.co.kr/pr/aion/event/p2016/160803_nking/quick.png") 0 0 no-repeat;*/ display: block; position: fixed; width: 250px; height: 336px; top: 120px; left: 50%; margin-left: 500px; z-index: 4; }
+        .quick-menu ul { padding: 154px 73px 0 28px; }
+        .quick-menu ul li a { display: block; height: 35px;}
+        .quick-menu ul li.on .btn-quick-01 { background-position: 100% -154px; }
+        .quick-menu ul li.on .btn-quick-02 { background-position: 100% -189px; }
+        .quick-menu ul li.on .btn-quick-03 { background-position: 100% -224px; }
+        .quick-menu ul li.on .btn-quick-04 { background-position: 100% -258px; }
+    </style>
+</head>
+<body>
+<h3 id="quick1">텍스트 카운트</h3>
+<div class="opinion">
+    <textarea name="opinion" placeholder="1,000자 내로 입력해 주세요." maxlength="1000" cols="50" rows="10"></textarea>
+    <div class="count">(<span id="textCount">0</span>/1000)</div>
+</div>
+<h3 id="quick2">라이오 버튼</h3>
+<div class="radio-area">
+    <table>
+        <colgroup>
+            <col width="52">
+            <col width="62">
+            <col width="62">
+            <col width="62">
+            <col width="62">
+            <col width="62">
+            <col width="62">
+            <col width="62">
+            <col width="62">
+            <col width="62">
+            <col width="62">
+            <col width="62">
+            <col width="62">
+            <col width="62">
+            <col width="*">
+        </colgroup>
+        <thead>
+        <tr>
+            <th></th>
+            <th scope="col"><img src="./navi_01.png'">헥터</th>
+            <th scope="col"><img src="./navi_02.png'">프레야</th>
+            <th scope="col"><img src="./navi_03.png'">카이</th>
+            <th scope="col"><img src="./navi_04.png'">에리</th>
+            <th scope="col"><img src="./navi_05.png'">블록</th>
+            <th scope="col"><img src="./navi_06.png'">셀레네</th>
+            <th scope="col"><img src="./navi_07.png'">틴토</th>
+            <th scope="col"><img src="./navi_08.png'">아투바</th>
+            <th scope="col"><img src="./navi_09.png'">레온</th>
+            <th scope="col"><img src="./navi_10.png'"> 진</th>
+            <th scope="col"><img src="./navi_11.png'">오필리아</th>
+            <th scope="col"><img src="./navi_12.png'">지켈</th>
+            <th scope="col"><img src="./navi_13.png'">아이단</th>
+            <th scope="col">없음</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>선호 이터널</th>
+            <td><input type="radio" name="favor" id="answer-07-1-01" data-switch="1" value="헥터" req fname="선호 이터널"><label for="answer-07-1-01">헥터</label></td>
+            <td><input type="radio" name="favor" id="answer-07-1-02" data-switch="2" value="프레야"><label for="answer-07-1-02">프레야</label></td>
+            <td><input type="radio" name="favor" id="answer-07-1-03" data-switch="3" value="카이"><label for="answer-07-1-03">카이</label></td>
+            <td><input type="radio" name="favor" id="answer-07-1-04" data-switch="4" value="에리"><label for="answer-07-1-04">에리</label></td>
+            <td><input type="radio" name="favor" id="answer-07-1-05" data-switch="5" value="블록"><label for="answer-07-1-05">블록</label></td>
+            <td><input type="radio" name="favor" id="answer-07-1-06" data-switch="6" value="셀레네"><label for="answer-07-1-06">셀레네</label></td>
+            <td><input type="radio" name="favor" id="answer-07-1-07" data-switch="7" value="틴토"><label for="answer-07-1-07">틴토</label></td>
+            <td><input type="radio" name="favor" id="answer-07-1-08" data-switch="8" value="아투바"><label for="answer-07-1-08">아투바</label></td>
+            <td><input type="radio" name="favor" id="answer-07-1-09" data-switch="9" value="레온"><label for="answer-07-1-09">레온</label></td>
+            <td><input type="radio" name="favor" id="answer-07-1-10" data-switch="10" value="진"><label for="answer-07-1-10">진</label></td>
+            <td><input type="radio" name="favor" id="answer-07-1-11" data-switch="11" value="오필리아"><label for="answer-07-1-11">오필리아</label></td>
+            <td><input type="radio" name="favor" id="answer-07-1-12" data-switch="12" value="지켈"><label for="answer-07-1-12">지켈</label></td>
+            <td><input type="radio" name="favor" id="answer-07-1-13" data-switch="13" value="아이단"><label for="answer-07-1-13">아이단</label></td>
+            <td><input type="radio" name="favor" id="answer-07-1-14" value="없음"><label for="answer-07-1-14">없음</label></td>
+        </tr>
+        <tr>
+            <th>비선호 이터널</th>
+            <td><input type="radio" name="nonfavor" id="answer-07-2-01" data-switch="1" value="헥터"  req fname="비선호 이터널"><label for="answer-07-2-01">헥터</label></td>
+            <td><input type="radio" name="nonfavor" id="answer-07-2-02" data-switch="2" value="프레야"><label for="answer-07-2-02">프레야</label></td>
+            <td><input type="radio" name="nonfavor" id="answer-07-2-03" data-switch="3" value="카이"><label for="answer-07-2-03">카이</label></td>
+            <td><input type="radio" name="nonfavor" id="answer-07-2-04" data-switch="4" value="에리"><label for="answer-07-2-04">에리</label></td>
+            <td><input type="radio" name="nonfavor" id="answer-07-2-05" data-switch="5" value="블록"><label for="answer-07-2-05">블록</label></td>
+            <td><input type="radio" name="nonfavor" id="answer-07-2-06" data-switch="6" value="셀레네"><label for="answer-07-2-06">셀레네</label></td>
+            <td><input type="radio" name="nonfavor" id="answer-07-2-07" data-switch="7" value="틴토"><label for="answer-07-2-07">틴토</label></td>
+            <td><input type="radio" name="nonfavor" id="answer-07-2-08" data-switch="8" value="아투바"><label for="answer-07-2-08">아투바</label></td>
+            <td><input type="radio" name="nonfavor" id="answer-07-2-09" data-switch="9" value="레온"><label for="answer-07-2-09">레온</label></td>
+            <td><input type="radio" name="nonfavor" id="answer-07-2-10" data-switch="10" value="진"><label for="answer-07-2-10">진</label></td>
+            <td><input type="radio" name="nonfavor" id="answer-07-2-11" data-switch="11" value="오필리아"><label for="answer-07-2-11">오필리아</label></td>
+            <td><input type="radio" name="nonfavor" id="answer-07-2-12" data-switch="12" value="지켈"><label for="answer-07-2-12">지켈</label></td>
+            <td><input type="radio" name="nonfavor" id="answer-07-2-13" data-switch="13" value="아이단"><label for="answer-07-2-13">아이단</label></td>
+            <td><input type="radio" name="nonfavor" id="answer-07-2-14" value="없음"><label for="answer-07-2-14">없음</label></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<h3 id="quick3">체크 박스</h3>
+<div class="check-area">
+    <table>
+        <colgroup>
+            <col width="*"/>
+            <col width="261"/>
+            <col width="146"/>
+            <col width="146"/>
+        </colgroup>
+        <thead>
+        <tr>
+            <th></th>
+            <th scope="col">대표 이미지</th>
+            <th scope="col">10-1<br/>재미 있었던 콘텐츠</th>
+            <th scope="col">10-2<br/>재미 없었던 콘텐츠</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1. 누구나 입장 가능한 오픈형 '지역 던전'<span>'지역 던전'</span></th>
+            <td><img src="./ico/navi_01.png'" ></td>
+            <td><input type="checkbox" data-switch="check" name="funCon" id="answer10-1-01" req fname="재미 있었던 콘텐츠"><label for="answer10-1-01"></label></td>
+            <td><input type="checkbox" data-switch="check" name="non_funCon" id="answer-10-2-01" req fname="재미 없었던 콘텐츠"><label for="answer-10-2-01"></label></td>
+        </tr>
+        <tr>
+            <th scope="row">2. 다른 유저와 파티를 구성하여 협동 플레이를 통해<br/><em></em>클리어하는 <span>'봉인 던전'</span></th>
+            <td><img src="./ico/navi_02.png'" ></td>
+            <td><input type="checkbox" data-switch="check" name="funCon" id="answer10-1-02"><label for="answer10-1-02"></label></td>
+            <td><input type="checkbox" data-switch="check" name="non_funCon" id="answer-10-2-02"><label for="answer-10-2-02"></label></td>
+        </tr>
+        <tr>
+            <th scope="row">3. 던전 내 유저들의 전투로 인해<br/><em></em>던전의 성장(단계상승) 및 소멸이 결정되는 <span>'에픽 던전'</span></th>
+            <td><img src="./ico/navi_03.png'" ></td>
+            <td><input type="checkbox" data-switch="check" name="funCon" id="answer10-1-03"><label for="answer10-1-03"></label></td>
+            <td><input type="checkbox" data-switch="check" name="non_funCon" id="answer-10-2-03"><label for="answer-10-2-03"></label></td>
+        </tr>
+        <tr>
+            <th scope="row">4. 플레이 중 랜덤하게 입구가 생성되는 <span>'균열 던전'</span></th>
+            <td><img src="./ico/navi_04.png'" ></td>
+            <td><input type="checkbox" data-switch="check" name="funCon" id="answer10-1-04"><label for="answer10-1-04"></label></td>
+            <td><input type="checkbox" data-switch="check" name="non_funCon" id="answer-10-2-04"><label for="answer-10-2-04"></label></td>
+        </tr>
+        <tr>
+            <th scope="row">5. 내가 보유한 이터널들로 원정대를 구성하여 상층을<br/><em></em>공략해가는 <span>‘오만의 탑’</span></th>
+            <td><img src="./ico/navi_05.png'" ></td>
+            <td><input type="checkbox" data-switch="check" name="funCon" id="answer10-1-05"><label for="answer10-1-05"></label></td>
+            <td><input type="checkbox" data-switch="check" name="non_funCon" id="answer-10-2-05"><label for="answer-10-2-05"></label></td>
+        </tr>
+        <tr>
+            <th scope="row">6. 필드에서 자유롭게 가능한 <span>‘유저 간 전투(PvP)’</span></th>
+            <td><img src="./ico/navi_06.png'"></td>
+            <td><input type="checkbox" data-switch="check" name="funCon" id="answer10-1-06"><label for="answer10-1-06"></label></td>
+            <td><input type="checkbox" data-switch="check" name="non_funCon" id="answer-10-2-06"><label for="answer-10-2-06"></label></td>
+        </tr>
+        <tr>
+            <th scope="row">7. 연대기/지역/돌발/협동이벤트 등 게임을 진행하기 위한<span><br/><em></em>‘임무(퀘스트)’</span></th>
+            <td><img src="./ico/navi_07.png'"></td>
+            <td><input type="checkbox" data-switch="check" name="funCon" id="answer10-1-07"><label for="answer10-1-07"></label></td>
+            <td><input type="checkbox" data-switch="check" name="non_funCon" id="answer-10-2-07"><label for="answer-10-2-07"></label></td>
+        </tr>
+        <tr>
+            <th scope="row" colspan="2">8. 기타</th>
+            <td><input type="checkbox" data-switch="check" name="funCon" id="answer10-1-08"><input type="text" name="funCon"  data-check="10" placeholder="콘텐츠명 입력" maxlength="10"></td>
+            <td><input type="checkbox" data-switch="check" name="non_funCon" id="answer-10-2-08"><input type="text" name="non_funCon"  data-check="11" placeholder="콘텐츠명 입력" maxlength="10"></td>
+        </tr>
+        <tr>
+            <th scope="row" colspan="2">9. 없음</th>
+            <td><input type="checkbox" data-switch="check" name="funCon" id="answer10-1-09"><label for="answer10-1-09"></label></td>
+            <td><input type="checkbox" data-switch="check" name="non_funCon" id="answer-10-2-09"><label for="answer-10-2-09"></label></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="quick-menu">
+    <ul>
+        <li class="on"><a href="#quick1" class="btn-quick-01">quick1</a></li>
+        <li class=""><a href="#quick2" class="btn-quick-02">quick2</a></li>
+        <li class=""><a href="#quick3" class="btn-quick-03">quick3</a></li>
+        <!--<li class=""><a href="#quick4" class="btn-quick-04">지령&amp;보상</a></li>-->
+    </ul>
+    <a href="#header" class="btn-top top">TOP</a>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+<script>
+    //텍스트 카운트
+    (function($){
+        $.fn.extend( {
+            limiter: function(limit, elem) {
+
+                $(this).on("keyup focus", function() {
+                    setCount(this, elem);
+                });
+                function setCount(src, elem) {
+                    var chars = src.value.length;
+                    if (chars > limit) {
+                        src.value = src.value.substr(0, limit);
+                        chars = limit;
+                    }
+                    elem.html( 1000-(limit - chars) ); // 0 부터 카운트
+                    //elem.html( limit - chars );  // 1000자에서 빼기
+                }
+                setCount($(this)[0], elem);
+            }
+        });
+        var elem = $(".opinion .count span");
+        $(".opinion textarea").limiter(1000, elem);
+    })(jQuery);
+
+
+    (function($){
+        //   인풋 선택 관련 처리
+        $(document).on('click.ui.switch', '[data-switch]', function(e){
+
+            //라디오 버튼 상하 중복 체크 확인
+            var checked = e.target.checked;
+            $($('[data-switch=' + $(this).attr('data-switch') + ']')).prop("checked", false);
+            $(this).prop("checked", true);
+            // 체크박스 좌우 중 하나 선택
+            if(e.target.type == 'checkbox'){
+                if(!checked){
+                    $(this).prop("checked", false);
+                }
+            }
+
+        });
+// 텍스트 인풋 작성 안됐을때 확인
+        $(document).on('keypress.ui.check', '[data-check]', function(){
+            $(this).siblings('input').prop('checked', true);
+        });
+        $(document).on('focusout.ui.check', '[data-check]', function(){
+            if($(this).val() == ''){
+                $(this).siblings('input').prop('checked', false);
+            }
+        });
+
+    })(window.jQuery);
+
+
+    (function($){
+        'use strict';
+        /* ----------------------------
+         * UI : Modal
+         * ----------------------------
+         */
+        var hash,
+                dialog;
+        $('.openLayer').on('click', function(e) {
+            hash = this.hash,
+                    dialog = new nc.ui.Modal({
+                        isAutoButton: true,
+                        isBackdropClickClose: true,
+                        isEsc: true,
+                        backdropCss: {'opacity' : '0.8'},
+                        content: $(hash)
+                    });
+            dialog.show();
+            e.preventDefault();
+        });
+
+        $('.layerClose').on('click', function(e) {
+            dialog.hide();
+            e.preventDefault();
+        });
+
+
+
+
+        var $menu = $('.quick-menu ul li'),
+                $contents = $('[id^=quick]'),
+                btnTop = $('.top'),
+                limit = 780;
+
+
+        var scltop = $(window).scrollTop();
+        if (!(limit <= scltop)) {
+            $menu.removeClass('on');
+        }
+        $menu.on('click','a', function(e){
+            e.preventDefault();
+            var target = $(this).attr("href"),
+                    offsetTop = $(target).offset().top;
+            console.log(offsetTop);
+            var $doc = $('html, body');
+            $doc.stop()
+                    .animate({
+                        scrollTop :offsetTop
+                    }, 800)
+        });
+        $(window).scroll(function(){
+            var scltop = $(window).scrollTop();
+            $.each($contents, function(idx, item){
+                var $target = $contents.eq(idx),
+                        i       = idx,
+                        targetTop = $target.offset().top;
+                if (targetTop <= scltop) {
+                    $menu.removeClass('on');
+                    $menu.eq(i).addClass('on');
+                }
+                if (!(limit <= scltop)) {
+                    $menu.removeClass('on');
+                }
+            })
+        });
+        btnTop.on('click', function(e){
+            e.preventDefault();
+            $('html, body').stop()
+                    .animate({
+                        scrollTop : 0
+                    },800)
+        });
+
+
+    })(jQuery);
+
+
+
+
+</script>
+</html>
